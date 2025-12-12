@@ -1,0 +1,40 @@
+Windows Installation
+
+Bloodhound
+Mimikatz and it's evasion tools
+netexec
+Ghidra
+x64Dbg
+SysInternals
+Reanalyze
+VSCode
+ncat/powercat
+Java
+OWASP ZAP
+Burp Pro
+Python3.10
+Nodejs
+GoLang
+Github Copilot
+
+
+
+Linux Installation
+
+Bloodhound
+Netexec
+radare2
+NMAP
+smbclient
+smbmap
+rpcclient
+Metasploit
+Mythic
+Sliver
+BeEF
+Burp Pro
+OWASP ZAP
+Python3.10
+Searchsploit
+Nodejs
+GoLang

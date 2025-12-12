@@ -1,0 +1,41 @@
+# =======================================================================================================================
+# Startup Commands
+# =======================================================================================================================
+
+screenfetch
+export PATH="$PATH:$HOME/.local/bin"
+export LC_ALL=C.UTF-8
+export LANGUAGE=C.UTF-8
+export LANG=C.UTF-8
+export TERM=xterm-256color
+
+# =======================================================================================================================
+# Aliases
+# =======================================================================================================================
+
+alias ls='exa -l --icons $@'
+alias ll='exa -al --icons $@'
+alias tree='exa -Tal --icons $@'
+alias cls='tput clear reset'
+alias bc='batcat $@'
+alias pslist='procs'
+alias co="sudo chown -R $USER:$USER *"
+alias prof='tail -n +260 $HOME/.zshrc'
+alias eprof='vim $HOME/.zshrc'
+alias hosts='batcat /etc/hosts'
+alias ehosts='sudo vim /etc/hosts'
+alias txks="head -n 31 $HOME/.tmux/tmux.conf"
+alias tx="tmux -f $HOME/.tmux/tmux.conf"
+alias xc='xclip -i -selection clipboard'
+
+# =======================================================================================================================
+# Functions
+# =======================================================================================================================
+
+apt-clean()
+{
+	
+}
+
+
+
