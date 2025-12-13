@@ -1,5 +1,7 @@
 #! /bin/bash
 
+
+printf "[+] Installing Sliver C2\n"
 mkdir -p "$HOME/.local/tools/sliver"
 
 wget --quiet --output-file="$HOME/.local/tools/sliver/sliver-client" https://github.com/BishopFox/sliver/releases/latest/download/sliver-client_linux
