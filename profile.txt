@@ -27,6 +27,9 @@ alias ehosts='sudo vim /etc/hosts'
 alias txks="head -n 31 $HOME/.tmux/tmux.conf"
 alias tx="tmux -f $HOME/.tmux/tmux.conf"
 alias xc='xclip -i -selection clipboard'
+alias ipp='curl http://ifconfig.me'
+alias ipl='ip addr show eth0'
+alias ipt='ip addr show tun0'
 
 # =======================================================================================================================
 # Functions
@@ -34,8 +37,61 @@ alias xc='xclip -i -selection clipboard'
 
 apt-clean()
 {
-	
+	bold=$(tput bold)
+	reset=$(tput sgr0)
+
+	sudo apt-get clean
+	tput reset clear
+
+	python3 -c "from rich.console import Console; console = Console(); console.rule('[+] UPDATING APTITUDE [+]');" | lolcat
+	sudo apt-get clean > /dev/null 2>&1;
+	sudo apt-get autoclean 2>&1 | xargs -I{} -d$'\n' echo "${bold}[I] {}${reset}" | lolcat
+	echo ''
+
+	python3 -c "from rich.console import Console; console = Console(); console.rule('[+] apt-get autoclean [+]');" | lolcat
+	sudo apt-get autoclean 2>&1 | xargs -I{} -d$'\n' echo "${bold}[I] {}${reset}" | lolcat
+	echo ''
+
+	python3 -c "from rich.console import Console; console = Console(); console.rule('[+] apt-get remove [+]');" | lolcat
+	sudo apt-get -y remove 2>&1 | xargs -I{} -d$'\n' echo "${bold}[I] {}${reset}" | lolcat
+	echo ''
+
+	python3 -c "from rich.console import Console; console = Console(); console.rule('[+] apt-get autoremove [+]');" | lolcat
+	sudo apt-get -y autoremove 2>&1 | xargs -I{} -d$'\n' echo "${bold}[I] {}${reset}" | lolcat
+	echo ''
+
+	python3 -c "from rich.console import Console; console = Console(); console.rule('[+] FINISHED [+]');" | lolcat
+	echo ''	
 }
 
+apt-update()
+{
+	bold=$(tput bold)
+	reset=$(tput sgr0)
 
+	sudo apt-get clean
+	tput reset clear
 
+	python3 -c "from rich.console import Console; console = Console(); console.rule('[+] apt-get update [+]');" | lolcat
+	sudo apt-get update --fix-missing 2>&1 | xargs -I{} -d$'\n' echo "${bold}[I] {}${reset}" | lolcat
+	echo ''
+
+	python3 -c "from rich.console import Console; console = Console(); console.rule('[+] apt-get upgrade [+]');" | lolcat
+	sudo apt-get -y upgrade 2>&1 | xargs -I{} -d$'\n' echo "${bold}[I] {}${reset}" | lolcat
+	echo ''
+
+	python3 -c "from rich.console import Console; console = Console(); console.rule('[+] apt-get dist-upgrade [+]');" | lolcat
+	sudo apt-get -y dist-upgrade 2>&1 | xargs -I{} -d$'\n' echo "${bold}[I] {}${reset}" | lolcat
+	echo ''
+
+	python3 -c "from rich.console import Console; console = Console(); console.rule('[+] apt-get install build-essential [+]');" | lolcat
+	sudo apt-get install -y build-essential 2>&1 | xargs -I{} -d$'\n' echo "${bold}[I] {}${reset}" | lolcat
+	echo ''
+
+	python3 -c "from rich.console import Console; console = Console(); console.rule('[+] apt-get linux-headers [+]');" | lolcat
+	sudo apt-get install -y linux-headers-`uname -r` 2>&1 | xargs -I{} -d$'\n' echo "${bold}[I] {}${reset}" | lolcat
+	echo ''
+
+	python3 -c "from rich.console import Console; console = Console(); console.rule('[+] FINISHED [+]');" | lolcat
+	echo ''
+}
