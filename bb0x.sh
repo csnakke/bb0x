@@ -6,6 +6,9 @@ tput clear reset
 mkdir -p $HOME/.local/bin
 mkdir -p $HOME/.local/tools
 
+ln -sf $HOME/MacDrive/bb0x/profile.txt $HOME/.profile
+printf "source $HOME/.profile\n\n" >> $HOME/.zshrc
+
 printf "[+] Updating the System\n"
 sudo apt-get clean
 sudo apt-get autoclean
@@ -43,7 +46,7 @@ sudo apt-get install linux-headers-`uname -r` -y
 tput clear reset
 
 printf "[+] Installing tools\n"
-sudo apt-get install -y net-tools wget iputils-ping curl vim tmux screenfetch gdebi git unzip bat exa lolcat snap openssh-server docker docker-compose docker.io jq snapd xclip
+sudo apt-get install -y net-tools wget iputils-ping curl vim tmux screenfetch gdebi git unzip bat exa lolcat snap openssh-server docker docker-compose docker.io jq snapd xclip samba
 tput clear reset
 
 printf "[+] Installing Python - PyEnv\n"
@@ -83,6 +86,38 @@ tar -xvf "$go_version.linux-amd64.tar.gz"
 mv -f go $HOME/.local/
 ln -sf $HOME/.local/go/bin/go $HOME/.local/bin/go
 rm -rf "$go_version.linux-amd64.tar.gz"
+
+echo
+echo
+
+printf "[+] Installing TMux Themes\n"
+mkdir -p $HOME/.tmux/plugins
+git clone --quiet https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
+git clone --quiet https://github.com/o0th/tmux-nova.git $HOME/.tmux/plugins/tmux-nova
+
+ln -sf $HOME/MacDrive/bb0x/tmux.conf $HOME/.tmux/tmux.conf
+
+echo
+echo
+
+printf "[+] Enabling Shared Drive - MacDrive\n"
+sudo apt-get install -y samba
+mkdir -p "$HOME/MacDrive"
+printf "kali\nkali\n" | sudo smbpasswd -a kali
+
+printf '[MacDrive]\n' | sudo tee -a /etc/samba/smb.conf
+printf '\tcomment = Shared Files for Host\n' | sudo tee -a /etc/samba/smb.conf
+printf '\tpath = /home/kali/MacDrive\n' | sudo tee -a /etc/samba/smb.conf
+printf '\tbrowseable = yes\n' | sudo tee -a /etc/samba/smb.conf
+printf '\tread only = no\n' | sudo tee -a /etc/samba/smb.conf
+printf '\tguest ok = no\n' | sudo tee -a /etc/samba/smb.conf
+printf '\tvalid users = kali \n' | sudo tee -a /etc/samba/smb.conf
+printf '\tcreate mask = 0777\n' | sudo tee -a /etc/samba/smb.conf
+printf '\tdirectory mask = 0777\n' | sudo tee -a /etc/samba/smb.conf
+
+sudo systemctl restart smbd.service
+sudo systemctl enable smbd.service
+sudo systemctl status smbd.service
 
 echo
 echo
