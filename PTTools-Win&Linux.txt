@@ -16,25 +16,3 @@ Python3.10
 Nodejs
 GoLang
 Github Copilot
-
-
-
-Linux Installation
-
-Bloodhound
-Netexec
-radare2
-NMAP
-smbclient
-smbmap
-rpcclient
-Metasploit
-Mythic
-Sliver
-BeEF
-Burp Pro
-OWASP ZAP
-Python3.10
-Searchsploit
-Nodejs
-GoLang
