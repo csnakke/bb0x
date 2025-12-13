@@ -7,6 +7,8 @@ cd "$HOME/.local/tools/mythic"
 sudo make
 
 sudo ./mythic-cli status # Will create .env file with random password
+printf "[+] Edit the .env file to change port 8080 to 8889"
+
 sudo ./mythic-cli start
 
 printf "[+] Web URL runs at https://localhost:7443"
