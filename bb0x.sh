@@ -65,8 +65,8 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - bash)"
 
-pyenv install 3.10.16
-pyenv local 3.10.16
+pyenv install 3.10.19
+pyenv local 3.10.19
 
 echo
 echo
