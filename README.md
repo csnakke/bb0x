@@ -3,6 +3,33 @@
 Run this first to perform the full system update and upgrade.
 Also, run this minimum 3 times.
 
-tput clear reset && printf "[+] Updating the System\n\n" && sudo apt-get clean && sudo apt-get autoclean && sudo apt-get remove && sudo apt-get autoremove && sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y && sudo apt-get install build-essential -y && sudo apt-get install linux-headers-$(uname -r) -y && printf "\n\n[+] Updated the System\n\n"
+```bash
+tput clear reset
+printf "[+] Updating the System\n\n"
+sudo apt-get clean
+sudo apt-get autoclean
+sudo apt-get remove
+sudo apt-get autoremove
+sudo apt-get update
+sudo apt-get upgrade -y
+sudo apt-get dist-upgrade -y
+sudo apt-get install build-essential -y
+sudo apt-get install linux-headers-$(uname -r) -y
+printf "\n\n[+] Updated the System\n\n"
+```
 
-### Once this is performed run `bb0x.sh`
+### Run below commands
+
+```bash
+mkdir -p $HOME/.local/bin
+mkdir -p $HOME/.local/tools
+
+printf "[+] Installing tools\n"
+sudo apt-get install -y net-tools wget iputils-ping curl vim tmux git unzip bat
+sudo apt-get install -y exa lolcat openssh-server docker-compose docker.io jq snap xclip samba
+
+sudo usermod -aG docker $USER
+sudo systemctl restart docker.service
+sudo systemctl enable docker.service
+tput clear reset
+```
