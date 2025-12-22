@@ -48,6 +48,8 @@ alias ipp='curl http://ifconfig.me'
 alias ipl='ip addr show eth0'
 alias ipt='ip addr show tun0'
 
+alias nsescripts='ll /usr/local/share/nmap/scripts'
+
 # =======================================================================================================================
 # Functions
 # =======================================================================================================================
@@ -111,4 +113,24 @@ apt-update()
 
 	python3 -c "from rich.console import Console; console = Console(); console.rule('[+] FINISHED [+]');" | lolcat
 	echo ''
+}
+
+function fp()
+{
+    ps -aux | grep -v grep | grep $1 | lolcat
+}
+
+function fpid()
+{
+    ps -aux | grep -v grep | grep $1 | awk -F' ' '{ print $2 }'
+}
+
+function clearRam()
+{
+    sync; echo 3 | sudo tee /proc/sys/vm/drop_caches > /dev/null && sudo swapoff -a && sudo swapon -a
+    echo "===========================================================================================" | lolcat
+    echo "Cache Cleaned" | lolcat
+    echo "===========================================================================================" | lolcat
+    sudo free -h | lolcat
+    echo "===========================================================================================" | lolcat
 }
