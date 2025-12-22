@@ -46,7 +46,7 @@ sudo apt-get install linux-headers-`uname -r` -y
 tput clear reset
 
 printf "[+] Installing tools\n"
-sudo apt-get install -y net-tools wget iputils-ping curl vim tmux screenfetch gdebi git unzip bat exa lolcat snap openssh-server docker-compose docker.io jq snapd xclip samba
+sudo apt-get install -y net-tools wget iputils-ping curl vim tmux screenfetch gdebi git unzip bat exa lolcat openssh-server docker-compose docker.io jq snap xclip samba
 
 sudo usermod -aG docker $USER
 sudo systemctl restart docker.service
