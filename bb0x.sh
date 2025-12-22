@@ -86,7 +86,7 @@ echo
 printf "[+] Installing GoLang\n"
 go_version=$(curl -s https://go.dev/VERSION?m=text | head -n 1)
 wget -q "https://go.dev/dl/$go_version.linux-amd64.tar.gz"
-tar -xvf "$go_version.linux-amd64.tar.gz"
+tar -xf "$go_version.linux-amd64.tar.gz"
 mv -f go $HOME/.local/
 ln -sf $HOME/.local/go/bin/go $HOME/.local/bin/go
 rm -rf "$go_version.linux-amd64.tar.gz"
@@ -104,14 +104,14 @@ ln -sf $HOME/MacDrive/bb0x/tmux.conf $HOME/.tmux/tmux.conf
 echo
 echo
 
-printf "[+] Enabling Shared Drive - MacDrive\n"
+printf "[+] Enabling Shared Drive - SharedDrive\n"
 sudo apt-get install -y samba
-mkdir -p "$HOME/MacDrive"
+mkdir -p "$HOME/SharedDrive"
 printf "kali\nkali\n" | sudo smbpasswd -a kali
 
-printf '[MacDrive]\n' | sudo tee -a /etc/samba/smb.conf
+printf '[SharedDrive]\n' | sudo tee -a /etc/samba/smb.conf
 printf '\tcomment = Shared Files for Host\n' | sudo tee -a /etc/samba/smb.conf
-printf '\tpath = /home/kali/MacDrive\n' | sudo tee -a /etc/samba/smb.conf
+printf '\tpath = /home/kali/SharedDrive\n' | sudo tee -a /etc/samba/smb.conf
 printf '\tbrowseable = yes\n' | sudo tee -a /etc/samba/smb.conf
 printf '\tread only = no\n' | sudo tee -a /etc/samba/smb.conf
 printf '\tguest ok = no\n' | sudo tee -a /etc/samba/smb.conf
