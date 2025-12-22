@@ -27,16 +27,24 @@ export NVM_DIR="$HOME/.nvm"
 alias ls='exa -l --icons $@'
 alias ll='exa -al --icons $@'
 alias tree='exa -Tal --icons $@'
+
 alias cls='tput clear reset'
+
 alias bc='batcat $@'
+
 alias co="sudo chown -R $USER:$USER *"
-alias prof='tail -n +260 $HOME/.zshrc'
+
+alias prof='tail -n +29 $HOME/.zshrc'
 alias eprof='vim $HOME/.zshrc'
+
 alias hosts='batcat /etc/hosts'
 alias ehosts='sudo vim /etc/hosts'
+
 alias txks="head -n 31 $HOME/.tmux/tmux.conf"
 alias tx="tmux -f $HOME/.tmux/tmux.conf"
+
 alias xc='xclip -i -selection clipboard'
+
 alias ipp='curl http://ifconfig.me'
 alias ipl='ip addr show eth0'
 alias ipt='ip addr show tun0'
