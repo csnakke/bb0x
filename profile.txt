@@ -2,7 +2,6 @@
 # Startup Commands
 # =======================================================================================================================
 
-screenfetch
 export PATH="$PATH:$HOME/.local/bin"
 export LC_ALL=C.UTF-8
 export LANGUAGE=C.UTF-8
