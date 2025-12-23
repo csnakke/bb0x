@@ -26,7 +26,7 @@ mkdir -p $HOME/.local/tools
 
 printf "[+] Installing tools\n"
 sudo apt-get install -y net-tools wget iputils-ping curl vim tmux git unzip bat
-sudo apt-get install -y exa lolcat openssh-server docker-compose docker.io jq snap xclip samba
+sudo apt-get install -y eza lolcat openssh-server docker-compose docker.io jq snap xclip samba
 
 sudo usermod -aG docker $USER
 sudo systemctl restart docker.service
