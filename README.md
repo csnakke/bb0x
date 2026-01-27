@@ -25,11 +25,14 @@ mkdir -p $HOME/.local/bin
 mkdir -p $HOME/.local/tools
 
 printf "[+] Installing tools\n"
-sudo apt-get install -y net-tools wget iputils-ping curl vim tmux git unzip bat
+sudo apt-get install -y net-tools wget iputils-ping curl vim tmux git unzip bat open-vm-tools lightdm-gtk-greeter-settings
 sudo apt-get install -y eza lolcat openssh-server docker-compose docker.io jq snap xclip samba
 
 sudo usermod -aG docker $USER
 sudo systemctl restart docker.service
 sudo systemctl enable docker.service
 tput clear reset
+
+printf "[+] Installing PyEnv"
+curl -fsSL https://pyenv.run | bash
 ```
