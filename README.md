@@ -1,7 +1,7 @@
 # Installation Instructions
 
-Run this first to perform the full system update and upgrade.
-Also, run this minimum 3 times.
+* Run this first to perform the full system update and upgrade.
+* Also, run this minimum 3 times.
 
 ```bash
 tput clear reset
@@ -18,7 +18,7 @@ sudo apt-get install linux-headers-$(uname -r) -y
 printf "\n\n[+] Updated the System\n\n"
 ```
 
-### Run below commands
+## Run below commands
 
 ```bash
 mkdir -p $HOME/.local/bin
@@ -36,3 +36,13 @@ tput clear reset
 printf "[+] Installing PyEnv"
 curl -fsSL https://pyenv.run | bash
 ```
+
+## Feature Customizations
+
+* Add new wallpapers
+* Add new profile picture
+* Adding icons to dash
+* Complete the system update
+* Install Nerd Fonts using `getnf`
+  * `curl -fsSL https://raw.githubusercontent.com/getnf/getnf/main/install.sh | bash`
+* When changing lock screen background and profile picture, use `sudo lightdm-gtk-greeter-settings` and save images in `/usr/share/backgrounds/xfce/` folder
