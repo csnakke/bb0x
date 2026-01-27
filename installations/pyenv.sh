@@ -9,6 +9,6 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init - bash)"
 
 pyenv install 3.10.19
-pyenv local 3.10.19
+pyenv global 3.10.19
 
 python -m pip install -U pip rich
