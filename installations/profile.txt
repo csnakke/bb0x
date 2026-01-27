@@ -33,8 +33,8 @@ alias bc='batcat $@'
 
 alias co="sudo chown -R $USER:$USER *"
 
-alias prof='batcat $HOME/.zprofile'
-alias eprof='vim $HOME/.zprofile'
+alias prof='batcat $HOME/.profile'
+alias eprof='vim $HOME/.profile'
 
 alias hosts='batcat /etc/hosts'
 alias ehosts='sudo vim /etc/hosts'
