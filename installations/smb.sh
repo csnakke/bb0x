@@ -11,7 +11,7 @@ printf "\tpath = $HOME/SharedDrive\n" | sudo tee -a /etc/samba/smb.conf
 printf '\tbrowseable = yes\n' | sudo tee -a /etc/samba/smb.conf
 printf '\tread only = no\n' | sudo tee -a /etc/samba/smb.conf
 printf '\tguest ok = no\n' | sudo tee -a /etc/samba/smb.conf
-printf '\tvalid users = kali \n' | sudo tee -a /etc/samba/smb.conf
+printf "\tvalid users = $USER \n" | sudo tee -a /etc/samba/smb.conf
 printf '\tcreate mask = 0777\n' | sudo tee -a /etc/samba/smb.conf
 printf '\tdirectory mask = 0777\n' | sudo tee -a /etc/samba/smb.conf
 
