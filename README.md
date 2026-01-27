@@ -34,8 +34,6 @@ sudo systemctl restart docker.service
 sudo systemctl enable docker.service
 tput clear reset
 
-printf "[+] Installing PyEnv"
-curl -fsSL https://pyenv.run | bash
 ```
 
 ## Feature Customizations
