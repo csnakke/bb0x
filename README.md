@@ -27,7 +27,6 @@ mkdir -p $HOME/.local/tools
 printf "[+] Installing tools\n"
 sudo apt-get install -y net-tools wget iputils-ping curl vim tmux git unzip bat open-vm-tools lightdm-gtk-greeter-settings
 sudo apt-get install -y eza lolcat openssh-server docker-compose docker.io jq snap xclip samba
-sudo apt install -y build-essential curl git libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
 sudo usermod -aG docker $USER
 sudo systemctl restart docker.service
