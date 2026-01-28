@@ -1,5 +1,6 @@
 # Installation Instructions
 
+* Install from Kali NetInstaller
 * Run this first to perform the full system update and upgrade.
 * Also, run this minimum 3 times.
 
@@ -25,7 +26,7 @@ mkdir -p $HOME/.local/bin
 mkdir -p $HOME/.local/tools
 
 printf "[+] Installing tools\n"
-sudo apt-get install -y net-tools wget iputils-ping curl vim tmux git unzip bat open-vm-tools lightdm-gtk-greeter-settings
+sudo apt-get install -y net-tools wget iputils-ping curl vim tmux git unzip bat open-vm-tools
 sudo apt-get install -y eza lolcat openssh-server docker-compose docker.io jq snap xclip samba
 
 sudo usermod -aG docker $USER
@@ -43,4 +44,3 @@ tput clear reset
 * Complete the system update
 * Install Nerd Fonts using `getnf`
   * `curl -fsSL https://raw.githubusercontent.com/getnf/getnf/main/install.sh | bash`
-* When changing lock screen background and profile picture, use `sudo lightdm-gtk-greeter-settings` and save images in `/usr/share/backgrounds/xfce/` folder
