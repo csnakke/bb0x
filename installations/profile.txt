@@ -2,7 +2,7 @@
 # Startup Commands
 # =======================================================================================================================
 
-export PATH="$PATH:$HOME/.local/bin"
+export PATH="$HOME/.local/bin/:$PATH"
 export LC_ALL=C.UTF-8
 export LANGUAGE=C.UTF-8
 export LANG=C.UTF-8
@@ -51,6 +51,8 @@ alias ipl='ip addr show eth0'
 alias ipt='ip addr show tun0'
 
 alias nsescripts='ll /usr/local/share/nmap/scripts'
+
+alias fd='fdfind'
 
 # =======================================================================================================================
 # Functions
