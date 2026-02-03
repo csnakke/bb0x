@@ -46,6 +46,8 @@ uv python install 3.10.19
 ln -sf $HOME/.local/bin/python3.10 $HOME/.local/bin/python
 ```
 
+- To install dependencies, you always have to create a `venv`: `uv venv py310; source ./py310/bin/activate; pip install -U pip`
+
 ## Feature Customizations
 
 * Add new wallpapers
