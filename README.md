@@ -28,13 +28,22 @@ mkdir -p $HOME/.local/tools
 printf "[+] Installing tools\n"
 sudo apt-get install -y net-tools wget iputils-ping curl vim tmux git unzip bat open-vm-tools
 sudo apt-get install -y eza lolcat openssh-server docker-compose docker.io jq snap xclip samba
-sudo apt-get install -y zoxide fzf
+sudo apt-get install -y zoxide fzf ripgrep fd-find python3-pip
 
 sudo usermod -aG docker $USER
 sudo systemctl restart docker.service
 sudo systemctl enable docker.service
 tput clear reset
 
+```
+
+## Python Installation
+
+```bash
+python3 -m pip install -U pip uv --break-system-packages
+uv python install 3.10.19
+
+ln -sf $HOME/.local/bin/python3.10 $HOME/.local/bin/python
 ```
 
 ## Feature Customizations
