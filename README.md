@@ -25,10 +25,10 @@ printf "\n\n[+] Updated the System\n\n"
 mkdir -p $HOME/.local/bin
 mkdir -p $HOME/.local/tools
 
-printf "[+] Installing tools\n"
+printf "[+] Installing Pre-requisites\n"
 sudo apt-get install -y net-tools wget iputils-ping curl vim tmux git unzip bat open-vm-tools
 sudo apt-get install -y eza lolcat openssh-server docker-compose docker.io jq snap xclip samba
-sudo apt-get install -y zoxide fzf ripgrep fd-find python3-pip
+sudo apt-get install -y fastfetch btop zoxide fzf ripgrep fd-find python3-pip
 
 sudo usermod -aG docker $USER
 sudo systemctl restart docker.service
@@ -40,6 +40,7 @@ tput clear reset
 ## Python Installation
 
 ```bash
+export PATH="$HOME/.local/bin:$PATH"
 python3 -m pip install -U pip uv --break-system-packages
 uv python install 3.10.19
 
