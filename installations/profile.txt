@@ -2,6 +2,8 @@
 # Startup Commands
 # =======================================================================================================================
 
+fastfetch
+
 export PATH="$HOME/.local/bin/:$PATH"
 export LC_ALL=C.UTF-8
 export LANGUAGE=C.UTF-8
