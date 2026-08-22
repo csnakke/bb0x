@@ -10,6 +10,9 @@ export LANGUAGE=C.UTF-8
 export LANG=C.UTF-8
 export TERM=xterm-256color
 
+# This will remove Kernel Threads in PS Command Output
+export LIBPROC_HIDE_KERNEL=1
+
 autoload -U +X bashcompinit && bashcompinit
 autoload -U +X compinit && compinit
 
@@ -140,4 +143,17 @@ function clearRam()
     echo "===========================================================================================" | lolcat
     sudo free -h | lolcat
     echo "===========================================================================================" | lolcat
+}
+
+function ds()
+{
+    printf "\n[+] Docker Images"
+    printf "\n==================\n"
+    docker images -a
+    echo
+
+    printf "\n[+] Docker Containers"
+    printf "\n======================\n"
+    docker ps -a
+    echo
 }
