@@ -42,12 +42,15 @@ tput clear reset
 ```bash
 export PATH="$HOME/.local/bin:$PATH"
 python3 -m pip install -U pip uv --break-system-packages
-uv python install 3.10.19
-
+uv python install 3.10.19 # If you want to install Python-3.10.19
 ln -sf $HOME/.local/bin/python3.10 $HOME/.local/bin/python
-```
 
-- To install dependencies, you always have to create a `venv`: `uv venv py310; source ./py310/bin/activate; pip install -U pip`
+OR
+
+uv venv py310 --python 3.10.19
+source ./py310/bin/activate
+uv pip install -U pip
+```
 
 ## Feature Customizations
 
