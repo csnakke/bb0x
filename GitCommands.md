@@ -1,5 +1,24 @@
 ## Git Commands
 
+* Using `gh` - GitHub CLI
+
+```bash
+# Authenticate your device first
+gh auth login
+
+# Create a new private repo
+gh repo create REPO_NAME --private
+
+# OR
+# If you also want to create it from an existing local directory and push the code
+
+cd my-project
+git init
+git add .
+git commit -m "Initial commit"
+gh repo create my-project --private --source=. --push
+```
+
 * Below can be used if you have created a new repository
 
 ```bash
